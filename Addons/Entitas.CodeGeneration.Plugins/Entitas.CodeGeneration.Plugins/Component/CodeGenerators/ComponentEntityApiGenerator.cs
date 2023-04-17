@@ -15,14 +15,14 @@ namespace Entitas.CodeGeneration.Plugins {
     public ${ComponentType} ${validComponentName} { get { return (${ComponentType})GetComponent(${Index}); } }
     public bool has${ComponentName} { get { return HasComponent(${Index}); } }
 
-    public void Add${ComponentName}() {
+    public void Add${ComponentName}(${newMethodParameters}) {
         var index = ${Index};
         var component = (${ComponentType})CreateComponent(index, typeof(${ComponentType}));
 ${memberAssignmentList}
         AddComponent(index, component);
     }
 
-    public void Replace${ComponentName}() {
+    public void Replace${ComponentName}(${newMethodParameters}) {
         var index = ${Index};
         var component = (${ComponentType})CreateComponent(index, typeof(${ComponentType}));
 ${memberAssignmentList}
@@ -95,7 +95,7 @@ ${memberAssignmentList}
 
         string getMemberAssignmentList(MemberData[] memberData) {
             return string.Join("\n", memberData
-                .Select(info => "        component." + info.name + " = default"  + ";")
+                .Select(info => "        component." + info.name + " = new" + info.name.UppercaseFirst() + ";")
                 .ToArray()
             );
         }
