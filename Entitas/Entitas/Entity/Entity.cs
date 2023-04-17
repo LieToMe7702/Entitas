@@ -210,7 +210,11 @@ namespace Entitas {
                         OnComponentRemoved(this, index, previousComponent);
                     }
                 }
-
+                var resetComponent = previousComponent as IResetComponent;
+                if (resetComponent != null)
+                {
+                    resetComponent.OnReset();
+                }
                 GetComponentPool(index).Push(previousComponent);
 
             } else {

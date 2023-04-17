@@ -36,6 +36,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entitas\IResetComponent.cs" />
     <Compile Include="Entitas\Matcher\Matcher.cs" />
     <Compile Include="Entitas\Matcher\MatcherToString.cs" />
     <Compile Include="Entitas\Matcher\MatcherEquals.cs" />
@@ -102,21 +103,7 @@
     <Compile Include="Entitas\Systems\MultiReactiveSystem.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <Folder Include="Entitas\" />
-    <Folder Include="Entitas\Matcher\" />
-    <Folder Include="Entitas\EntityIndex\" />
-    <Folder Include="Entitas\Entity\" />
-    <Folder Include="Entitas\Group\" />
-    <Folder Include="Entitas\Context\" />
-    <Folder Include="Entitas\Systems\" />
-    <Folder Include="Entitas\Context\Exceptions\" />
-    <Folder Include="Entitas\Entity\Exceptions\" />
-    <Folder Include="Entitas\Collector\" />
-    <Folder Include="Entitas\Extensions\" />
-    <Folder Include="Entitas\Systems\Interfaces\" />
-    <Folder Include="Entitas\Matcher\Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Entitas\version.txt">
       <LogicalName>version.txt</LogicalName>
